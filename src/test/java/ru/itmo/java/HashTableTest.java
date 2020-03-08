@@ -94,6 +94,7 @@ public class HashTableTest {
                     Object actualPrevValue = testInstance.put(key, value);
 
                     Assert.assertEquals(expectedPrevValue, actualPrevValue);
+                    Assert.assertEquals(controlInstance.size(), testInstance.size());
                     Assert.assertEquals(value, testInstance.get(key));
                 }
                 case REMOVE: {
@@ -104,6 +105,7 @@ public class HashTableTest {
 
                     Assert.assertEquals(expectedPrevValue, actualPrevValue);
                     Assert.assertNull(testInstance.get(key));
+                    Assert.assertEquals(controlInstance.size(), testInstance.size());
                 }
             }
         }
